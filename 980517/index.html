@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tabs</title>
+    <link type="text/css" rel="stylesheet"
+        href="https://cdn.rawgit.com/rastikerdar/tanha-font/v0.10/dist/font-face.css">
+    <style>
+        * {
+            font-family: tanha;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            direction: rtl;
+            text-align: right;
+            text-align: justify;
+        }
+
+        .tabs {
+            overflow: hidden;
+            border: 1px solid #dddddd;
+            background: #f1f1f1;
+        }
+
+        .tabs>button {
+            background: inherit;
+            float: right;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: .3s;
+            font-size: 1.2rem;
+        }
+
+        .tabs>button:hover {
+            background: #dddddd;
+        }
+
+        .tabs button.active {
+            background: #cccccc
+        }
+        .tabcontent{
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+            border: 1px solid #cccccc;
+            animation: fade 1s;
+        }
+        @keyframes fade{
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tabs">
+        <h1>فهرست شهرها</h1>
+        <h2>لطفا بر روی یکی از شهر ها کلیک کنید :</h2>
+        <button class="tablinks " id="defultopen" onclick="opencity(event, 'fardis')">فردیس</button>
+        <button class="tablinks" onclick="opencity(event, 'shahriar')">شهریار</button>
+        <button class="tablinks" onclick="opencity(event, 'karaje')">کرج</button>
+    </div>
+    <div class="tabcontent" id="fardis">
+        <h1>فردیس</h1>
+        <p>شهر مدرن با بافت جمعیتی تکنوکرات.</p>
+    </div>
+    <div class="tabcontent" id="shahriar">
+        <h2>شهریار</h2>
+        <p>قطب کشاورزی استان البرز</p>
+    </div>
+    <div class="tabcontent" id="karaje">
+        <h1>کرج</h1>
+        <p>مرکز صنعتی استان البرز</p>
+    </div>
+    <script>  
+    let i, tabcontent, tablinks;
+            tabcontent=document.getElementsByClassName("tabcontent");
+            tablinks=document.getElementsByClassName("tablinks");
+        function opencity(evt, cityName){
+          for(i=0; i<tabcontent.length;i++){
+              tabcontent[i].style.display="none"
+          }
+          for(i=0; i<tablinks.length;i++){
+              tablinks[i].className=tablinks[i].className.replace(" active","");
+          }
+          document.getElementById(cityName).style.display="block";
+          evt.currentTarget.className+=" active";
+        //    این مهمه
+        }
+        document.getElementById("defultopen").click();
+    </script>
+</body>
+
+</html>

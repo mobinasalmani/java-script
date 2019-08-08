@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        color: rgb(0, 218, 145);
+        font-family: sans-serif;
+        text-shadow: 1px 2px 5px black;
+        text-align: center;
+    }
+    #demo{
+        font-size: 20px
+    }
+    #demoo{
+        color: royalblue
+    }
+    .dem{
+        background: aqua;
+        color: red;
+        font-family: sans-serif;
+        font-size: 15px;
+        box-shadow:  1px 1px 2px 4px gainsboro
+    }
+    </style>
+</head>
+<body>
+
+    <h1 id="demoo">My First JavaScript</h1>
+
+    <p id="demo">
+    JavaScript can change the style of an HTML element.
+    </p>
+    
+    <script>
+    function myFunction()
+    {
+        x=document.getElementById("demo")
+        x.style.color="green";
+    }
+    </script>
+    
+    <button class="dem" type="button" onclick="myFunction()">Click Me!</button>
+    
+</body>
+</html>
