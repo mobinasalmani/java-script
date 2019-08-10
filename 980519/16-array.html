@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+    let set1=[5,88,66,48,28];
+    let para= document.querySelector("p")
+    let set2=set1.map(function(value){
+        return value*2;
+    });
+    para.innerHTML=set2;
+    // let number="16";
+    // parseInt(number);
+    // para.innerText=number.toString();
+    // console.log(typeof number.toString());
+    </script>
+</body>
+</html>

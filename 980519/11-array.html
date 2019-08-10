@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 500px;
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="numbers">pleas enter a number:</label><br>
+        <input type="text" id="numbers"><br>
+        <button onclick="additem()">Add numbers</button>
+        <p id="demo"></p>
+    </div>
+    <script>
+        let myarray = [];
+        let input = document.querySelector("input");
+        let para = document.querySelector("p");
+
+        function additem() {
+            myarray.push(input.value);
+            para.innerHTML = myarray;
+            input.value = "";
+            console.log(myarray.length);
+
+        }
+    </script>
+</body>
+
+</html>

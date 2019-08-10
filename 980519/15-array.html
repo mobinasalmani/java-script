@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        let numbers = [1, 16, 17, 18];
+        let txt = "";
+        let para = document.querySelector("p");
+        
+        numbers.forEach(function (value) {
+            txt += (value * 2) - 3 + "<br>";
+        });
+        para.innerHTML=txt;
+    </script>
+</body>
+
+</html>

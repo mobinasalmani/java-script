@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <p id="demo"></p>
+  <script>
+  let numbers=[1,33,55,88,888];
+  let result=numbers.filter(myfunction);
+  let para=document.querySelector("p");
+  function myfunction(value){
+      return value>=33;
+  }
+  para.innerText=result;
+  </script>
+</body>
+</html>
