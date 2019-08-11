@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .container{
+        margin: 0 auto;
+        padding: 25px;
+        font-family: sans-serif;
+        font-size: 1.3rem;
+        width: 500px;
+        background: #75daf3;
+        border-radius: 6px;
+        box-shadow: 2px 2px 5px black;
+    }
+    #more{
+        display: none;
+    }
+    #myBtn{
+        outline: none;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        box-shadow: 2px 3px 5px black;
+        background: red;
+        color: palegreen;
+    }
+    #myBtn:hover{
+        background: #c277f5;
+        color:rgb(185, 0, 185);
+        box-shadow: 2px 3px 5px grey;
+    }
+    #Mm{
+        color: rgb(255, 141, 249);
+        text-shadow: 1px 2px 3px black;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="Mm">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span id="dots">...</span> <span id="more">Suscipit pariatur, aliquid sunt explicabo soluta nisi quo iure animi tempora blanditiis, asperiores eaque, eius similique amet placeat ut inventore minus natus.</span> </p><br>
+        <button onclick="myFunction()" id="myBtn">read more</button>
+    </div>
+    <script>
+    let dots=document.getElementById("dots");
+    let more=document.getElementById("more");
+    let btn=document.getElementById("myBtn")
+    function myFunction(){
+        if (dots.style.display=="none"){
+            dots.style.display="inline";
+            btn.innerText="read more";
+            more.style.display="none";
+        }else{
+            dots.style.display="none";
+            btn.innerText="read less";
+            more.style.display="inline";
+        }
+    }
+    </script>
+</body>
+</html>
