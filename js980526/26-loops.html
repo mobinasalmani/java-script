@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>loops</title>
+    <style>
+        p.demo {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        p.test {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="demo">A</p>
+    <p class="demo">B</p>
+    <p class="demo">C</p>
+    <p class="demo">D</p>
+    <p class="demo">E</p>
+    <p class="demo">F</p>
+    <p class="demo">G</p>
+    <p class="demo">H</p>
+    <p class="demo">I</p>
+    <p class="demo">J</p>
+    <button onclick="addStyle()">add style</button>
+
+    <script>
+        let para = document.getElementsByClassName("demo");
+        console.log(typeof (para));
+
+        function addStyle() {
+            for (let i = 0; i < para.length; i++) {
+                para[i].className += " test";
+                para[i].innerHTML += "(new)";
+            }
+        }
+    </script>
+</body>
+
+</html>
