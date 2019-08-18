@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>شهرها</title>
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v20.1.1/dist/font-face.css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: vazir;
+        direction: rtl;
+
+    }
+    body{
+        text-align: right;
+        /* text-align: justify; */
+
+    }
+    main{
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+    .container{
+        border: 1px solid #ccc;
+        background: #f1f1f1;
+
+    }
+    .container button{
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 1.1rem;
+    }
+    .container button:hover, .container button.active{
+        background-color: #ccc;
+    }
+    .tabcontent{
+        display: none;
+        padding: 6px 12px;
+        -moz-animation: fadeeffect 1s;
+        -o-animation: fadeeffect 1s;
+        -webkit-animation: fadeeffect 1s;;
+        animation: fadeeffect 1s;
+
+    }
+    @keyframes fadeeffect {
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    @-o-keyframes fadeeffect{
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    @-webkit-keyframes fadeeffect{
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    @-moz-keyframes fadeefffect{
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <button class="tablinks " id="defultbutton" onmouseover="openCity(event,'fardis')">فردیس</button>
+            <button class="tablinks" onmouseover="openCity(event,'shariar')">شهریار</button>
+            <button class="tablinks" onmouseover="openCity(event,'karaj')">کرج</button>
+        </div>
+        <div class="tabcontent" id="fardis">
+            <h1>فردیس</h1>
+            <h2>پاریس کوچک استان البرز</h2>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
+        </div>
+        <div class="tabcontent" id="shariar">
+            <h1>شهریار</h1>
+            <h2>قطب کشاورزی استان البرز</h2>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
+        </div>
+        <div class="tabcontent" id="karaj">
+            <h1>کرج</h1>
+            <h2>قطب صنعتی استان البرز</h2>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
+        </div>
+
+    </main>
+    <script>
+        
+        let tablinks=document.getElementsByClassName("tablinks");
+        let tabcontent=document.getElementsByClassName("tabcontent");
+       
+        function openCity(evt,cityName){
+            for(let i=0;i<tabcontent.length;i++)
+                tabcontent[i].style.display="none";
+            for(let i=0;i<tablinks.length; i++)
+                tablinks[i].className=tablinks[i].className.replace(" active","");
+            document.getElementById(cityName).style.display="block";
+            evt.currentTarget.className+=" active";
+        }
+        document.getElementById("defultbutton").click();
+    </script>
+</body>
+</html>

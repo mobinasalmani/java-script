@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>please enter a number between 5 & 10</p>
+        <input type="text" id="demo"><button type="button" onclick="myFunction()">ok</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        let message = document.getElementById("result");
+        let input = document.getElementById("demo");
+        let number;
+
+        function myFunction() {
+            message.innerHTML = "";
+            number = input.value;
+            try {
+                if (number == "") throw "empty";
+                if (isNaN(number)) throw "not a number";
+                if (number < 5) throw "too low";
+                if (number > 10) throw "too high"
+            } catch (ex) {
+                message.innerHTML = "input is " + ex;
+            }
+            finally{
+                demo.value="";
+            }
+        }
+    </script>
+</body>
+
+</html>

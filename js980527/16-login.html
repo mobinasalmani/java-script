@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <style>
+        .container{
+            margin: 0 auto;
+            padding: 25px;
+            font-family: sans-serif;
+            font-size: 1.4rem;
+            background: #f1f1f1;
+            max-width: 500px;
+        }
+        input[type=button]{
+            outline: none;
+            border: none;
+            padding: 10px;
+            margin:10px 0;
+        }
+        input[type=button]:hover{
+            background: rgba(0,0,0,.4);
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="uname">user name:</label>   <br>    
+        <input type="text" id="uname"><br>
+        <label for="pws">please enter your password:</label><br>
+        <input type="password" id="pws"><br>
+        <input type="button" value="login" onclick="myFunction()"><br>
+        <p id="demo"></p>
+
+    </div>
+    <script>
+    let uname=document.getElementById("uname");
+    let pws=document.getElementById("pws");
+    let para=document.getElementById("demo");
+    
+    function myFunction(){
+        para.value="";
+        if (uname.value.toLowerCase()=="mobina" && pws.value=="123") {
+           
+                para.innerText="welcome!";
+            
+        
+        } else {
+            para.innerText="please try again!";
+        }
+    }
+    
+    </script>
+</body>
+</html>

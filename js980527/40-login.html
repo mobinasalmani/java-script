@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button {
+            border: none;
+            outline: none;
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 14px 20px;
+            background-color: #e2e3e5;
+            color: rgb(0, 128, 255);
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .imgcontainer {
+            display: flex;
+            margin: 24px 0 12px 0;
+            position: relative;
+            justify-content: center;
+        }
+
+        img.avatar {
+            width: 10%;
+            border-radius: 50%;
+        }
+
+        .bodycontainer {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .modal {
+            display: none;
+            z-index: 1;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgb(0, 0, 0);
+            background: rgb(0, 0, 0, .4);
+            padding-top: 60px;
+        }
+
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000000;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .close:hover {
+            cursor: pointer;
+            color: red;
+        }
+
+        #loginbtn {
+            background: gray;
+            color: #000000
+        }
+
+        input[type="text"],
+        input[type="pssword"] {
+            width: 100%;
+            height: 25px;
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <button type="reset" onclick="mine()" id="modallogin">login</button>
+        <p id="login"></p>
+        <div class="modal" id="mymodal">
+            <form action="#" class="modal-content animate">
+                <div class="imgcontainer">
+                    <span class="close" title="close" onclick="closelogin()">&times;</span>
+                    <img src="img/avatar.png" alt="login" class="avatar">
+                </div>
+                <div class="bodycontainer">
+                    <label for="username">username:</label><br>
+                    <input type="text" id="username"><br><br>
+                    <label for="password">password:</label><br>
+                    <p id="tryagain">Please enter an 8-digit number ...</p>
+                    <input type="password" id="password"><br>
+                    <button  type="reset" onclick=" myFunction()" id="loginbtn">login</button>
+                    <p id="result"></p>
+
+                </div>
+
+            </form>
+
+        </div>
+        <script>
+            debugger
+            let paralogin = document.getElementById("login")
+            let username = document.getElementById("username")
+            let modal = document.getElementById("mymodal");
+            let message = document.getElementById("result");
+            let input = document.getElementById("password");
+            let number;
+
+            function mine() {
+                modal.style.display = "block";
+            }
+
+            function myFunction() {
+                if (username.value.toLowerCase() == "mobina") {
+                    paralogin.innerText = "welcom Mobina!";
+                    modallogin.innerText = "logout";
+                    closelogin();
+                } else {}
+                message.innerHTML = "";
+                number = input.value;
+                try {
+                    if (number == "") throw "empty";
+                    if (isNaN(number)) throw "not a number";
+                    if (number <= 10000000) throw "false so try again";
+
+                } catch (ex) {
+                    message.innerHTML = "input is " + ex;
+                } finally {
+                    password.value = "";
+                }
+            }
+
+            function closelogin() {
+                modal.style.display = "none";
+            }
+        </script>
+    </main>
+</body>
+
+</html>
