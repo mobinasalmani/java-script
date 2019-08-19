@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        *{
+            font-family: sans-serif;
+        }
         button {
             border: none;
             outline: none;
@@ -31,6 +34,19 @@
         img.avatar {
             width: 10%;
             border-radius: 50%;
+        }
+        .usrname{
+            padding: 5px;
+            background: #414141;
+            color: #f1f1f1;
+        }
+        .pws{
+            padding: 5px;
+            background: #414141;
+            color: #f1f1f1;
+        }
+        #tryagain{
+            font-size: 13px;
         }
 
         .bodycontainer {
@@ -83,7 +99,7 @@
 
 <body>
     <main>
-        <button type="reset" onclick="mine()" id="modallogin">login</button>
+        <button type="reset" onclick="logout()" id="modallogin">login</button>
         <p id="login"></p>
         <div class="modal" id="mymodal">
             <form action="#" class="modal-content animate">
@@ -92,9 +108,9 @@
                     <img src="img/avatar.png" alt="login" class="avatar">
                 </div>
                 <div class="bodycontainer">
-                    <label for="username">username:</label><br>
+                    <label for="username" class="usrname">username:</label><br><br>
                     <input type="text" id="username"><br><br>
-                    <label for="password">password:</label><br>
+                    <label for="password" class="pws">password:</label><br>
                     <p id="tryagain">Please enter an 8-digit number ...</p>
                     <input type="password" id="password"><br>
                     <button  type="reset" onclick=" myFunction()" id="loginbtn">login</button>
@@ -106,7 +122,6 @@
 
         </div>
         <script>
-            debugger
             let paralogin = document.getElementById("login")
             let username = document.getElementById("username")
             let modal = document.getElementById("mymodal");
@@ -114,7 +129,7 @@
             let password = document.getElementById("password");
             let number;
 
-            function mine() {
+            function logout() {
                 modal.style.display = "block";
                 if(modallogin.innerText == "logout"){
                     modallogin.innerText = "login";
@@ -124,17 +139,22 @@
             }
 
             function myFunction() {
+                debugger
+                message.innerHTML = "";
                 if (username.value.toLowerCase() == "mobina"  && password.value.toLowerCase() == "12345678") {
-                    paralogin.innerText = "welcom Mobina!";
+                    paralogin.innerText = "Welcom "+username.value;
                     modallogin.innerText = "logout";
                     closelogin();
-                } else {}
-                message.innerHTML = "";
+                } else {
+
+                    message.innerHTML="username or  password is incorrect, please try again!"
+                }
+                
                 number = password.value.length;
                 try {
                     if (number == "") throw "empty";
                     if (number < 8) throw "false so try again";
-                    if (number > 0) throw "false so try again";
+                    
 
                 } catch (ex) {
                     message.innerHTML = "input is " + ex;
