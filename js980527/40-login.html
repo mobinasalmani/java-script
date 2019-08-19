@@ -111,25 +111,30 @@
             let username = document.getElementById("username")
             let modal = document.getElementById("mymodal");
             let message = document.getElementById("result");
-            let input = document.getElementById("password");
+            let password = document.getElementById("password");
             let number;
 
             function mine() {
                 modal.style.display = "block";
+                if(modallogin.innerText == "logout"){
+                    modallogin.innerText = "login";
+                    paralogin.innerText = "";
+                    modal.style.display = "none";
+                }
             }
 
             function myFunction() {
-                if (username.value.toLowerCase() == "mobina") {
+                if (username.value.toLowerCase() == "mobina"  && password.value.toLowerCase() == "12345678") {
                     paralogin.innerText = "welcom Mobina!";
                     modallogin.innerText = "logout";
                     closelogin();
                 } else {}
                 message.innerHTML = "";
-                number = input.value;
+                number = password.value.length;
                 try {
                     if (number == "") throw "empty";
-                    if (isNaN(number)) throw "not a number";
-                    if (number <= 10000000) throw "false so try again";
+                    if (number < 8) throw "false so try again";
+                    if (number > 0) throw "false so try again";
 
                 } catch (ex) {
                     message.innerHTML = "input is " + ex;
